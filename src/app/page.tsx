@@ -2,7 +2,12 @@ import { FC } from 'react';
 
 const Home: FC = () => {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20"></div>
+    <div>
+      <h1 className="text-landing-hero-heading text-4xl font-[400] font-clash">Hello World</h1>
+      <p className="text-landing-hero-subheading text-md font-[450] font-satoshi">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
+      </p>
+    </div>
   );
 };
 
