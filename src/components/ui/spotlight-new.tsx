@@ -15,9 +15,9 @@ type SpotlightProps = {
 };
 
 export const Spotlight = ({
-  gradientFirst = 'radial-gradient(68.54% 68.72% at 55.02% 31.46%, rgba(233, 75, 135, 0.15) 0%, rgba(249, 162, 63, 0.08) 50%, rgba(249, 162, 63, 0) 80%)',
-  gradientSecond = 'radial-gradient(50% 50% at 50% 50%, rgba(233, 75, 135, 0.12) 0%, rgba(249, 162, 63, 0.06) 80%, transparent 100%)',
-  gradientThird = 'radial-gradient(50% 50% at 50% 50%, rgba(233, 75, 135, 0.08) 0%, rgba(249, 162, 63, 0.04) 80%, transparent 100%)',
+  gradientFirst = 'radial-gradient(68.54% 68.72% at 55.02% 31.46%, rgba(233, 75, 135, 0.35) 0%, rgba(249, 162, 63, 0.25) 50%, rgba(249, 162, 63, 0) 80%)',
+  gradientSecond = 'radial-gradient(50% 50% at 50% 50%, rgba(233, 75, 135, 0.30) 0%, rgba(249, 162, 63, 0.20) 80%, transparent 100%)',
+  gradientThird = 'radial-gradient(50% 50% at 50% 50%, rgba(233, 75, 135, 0.25) 0%, rgba(249, 162, 63, 0.15) 80%, transparent 100%)',
   translateY = -350,
   width = 560,
   height = 1380,
@@ -36,7 +36,7 @@ export const Spotlight = ({
       transition={{
         duration: 1.5,
       }}
-      className="pointer-events-none absolute inset-0 h-full w-full"
+      className="pointer-events-none absolute inset-0 h-full w-full overflow-x-hidden"
     >
       <motion.div
         animate={{
@@ -48,7 +48,7 @@ export const Spotlight = ({
           repeatType: 'reverse',
           ease: 'easeInOut',
         }}
-        className="absolute top-0 left-0 w-screen h-screen z-40 pointer-events-none"
+        className="absolute top-0 left-0 w-full h-screen -z-10 pointer-events-none"
       >
         <div
           style={{
@@ -91,7 +91,7 @@ export const Spotlight = ({
           repeatType: 'reverse',
           ease: 'easeInOut',
         }}
-        className="absolute top-0 right-0 w-screen h-screen z-40 pointer-events-none"
+        className="absolute top-0 right-0 w-full h-screen -z-10 pointer-events-none"
       >
         <div
           style={{
