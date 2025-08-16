@@ -1,10 +1,49 @@
-import { FC } from 'react';
+'use client';
+
+import { zodResolver } from '@hookform/resolvers/zod';
+
+import { FC, useState } from 'react';
+import { useForm } from 'react-hook-form';
 
 import { Button } from '@/components/ui';
+import { ContactFormData, contactFormSchema } from '@/lib/contact-form';
 
 export const Contact: FC = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm<ContactFormData>({
+    resolver: zodResolver(contactFormSchema),
+  });
+
+  const onSubmit = async (data: ContactFormData) => {
+    console.log('📝 Form Submission Data:', {
+      name: data.name,
+      email: data.email,
+      company: data.company,
+      role: data.role,
+      hasPainPoint: !!data.painPoint,
+      painPoint: data.painPoint,
+      hasVision: !!data.vision,
+      vision: data.vision,
+      hasAdditionalInfo: !!data.additionalInfo,
+      additionalInfo: data.additionalInfo,
+    });
+
+    setIsSubmitting(true);
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
+    setSubmitSuccess(true);
+    reset();
+    setIsSubmitting(false);
+  };
   return (
-    <section className="py-32" id="contact">
+    <section className="py-32 text-[var(--color-text-secondary)]" id="contact">
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <div>
@@ -58,46 +97,169 @@ export const Contact: FC = () => {
               </div>
             </div>
           </div>
-          <div className="bg-black/10 backdrop-blur-sm rounded-lg p-8 border border-[#6B46C1]/10">
-            <form className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-2">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  className="w-full px-4 py-2 bg-black/20 rounded-md border border-[#6B46C1]/20 focus:border-[#6B46C1] focus:outline-none transition-colors"
-                  placeholder="John Doe"
-                />
+          <div className="bg-white/10 backdrop-blur-2xl rounded-xl p-6 border border-white/30 shadow-lg relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-[#6B46C1]/10 via-[#E94B87]/5 to-[#F9A23F]/10 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-white/20 via-transparent to-white/20 pointer-events-none blur-3xl" />
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-3 relative">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium mb-1">
+                    Name *
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    {...register('name')}
+                    className={`w-full px-3 py-1.5 bg-black/30 rounded-md border ${
+                      errors.name ? 'border-red-500' : 'border-[#6B46C1]/30'
+                    } focus:border-[#6B46C1] focus:ring-1 focus:ring-[#6B46C1]/50 focus:outline-none transition-all placeholder:text-gray-400`}
+                    placeholder="John Doe"
+                  />
+                  {errors.name && (
+                    <p className="mt-1 text-xs text-red-500">{errors.name.message}</p>
+                  )}
+                </div>
+
+                {/* Email field */}
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium mb-1">
+                    Email *
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    {...register('email')}
+                    className={`w-full px-3 py-1.5 bg-black/30 rounded-md border ${
+                      errors.email ? 'border-red-500' : 'border-[#6B46C1]/30'
+                    } focus:border-[#6B46C1] focus:ring-1 focus:ring-[#6B46C1]/50 focus:outline-none transition-all placeholder:text-gray-400`}
+                    placeholder="john@company.com"
+                  />
+                  {errors.email && (
+                    <p className="mt-1 text-xs text-red-500">{errors.email.message}</p>
+                  )}
+                </div>
+
+                {/* Company field */}
+                <div>
+                  <label htmlFor="company" className="block text-sm font-medium mb-1">
+                    Company
+                  </label>
+                  <input
+                    type="text"
+                    id="company"
+                    {...register('company')}
+                    className={`w-full px-3 py-1.5 bg-black/30 rounded-md border ${
+                      errors.company ? 'border-red-500' : 'border-[#6B46C1]/30'
+                    } focus:border-[#6B46C1] focus:ring-1 focus:ring-[#6B46C1]/50 focus:outline-none transition-all placeholder:text-gray-400`}
+                    placeholder="Company Name"
+                  />
+                  {errors.company && (
+                    <p className="mt-1 text-xs text-red-500">{errors.company.message}</p>
+                  )}
+                </div>
+
+                {/* Role field */}
+                <div>
+                  <label htmlFor="role" className="block text-sm font-medium mb-1">
+                    Role
+                  </label>
+                  <input
+                    type="text"
+                    id="role"
+                    {...register('role')}
+                    className={`w-full px-3 py-1.5 bg-black/30 rounded-md border ${
+                      errors.role ? 'border-red-500' : 'border-[#6B46C1]/30'
+                    } focus:border-[#6B46C1] focus:ring-1 focus:ring-[#6B46C1]/50 focus:outline-none transition-all placeholder:text-gray-400`}
+                    placeholder="Your Role"
+                  />
+                  {errors.role && (
+                    <p className="mt-1 text-xs text-red-500">{errors.role.message}</p>
+                  )}
+                </div>
               </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-2">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  className="w-full px-4 py-2 bg-black/20 rounded-md border border-[#6B46C1]/20 focus:border-[#6B46C1] focus:outline-none transition-colors"
-                  placeholder="john@company.com"
-                />
+
+              {/* Detailed Info - Single Column */}
+              <div className="space-y-4">
+                {/* Pain Point field */}
+                <div>
+                  <label htmlFor="painPoint" className="block text-sm font-medium mb-1">
+                    What&apos;s your biggest challenge right now?
+                  </label>
+                  <textarea
+                    id="painPoint"
+                    {...register('painPoint')}
+                    rows={2}
+                    className={`w-full px-3 py-1.5 bg-black/30 rounded-md border ${
+                      errors.painPoint ? 'border-red-500' : 'border-[#6B46C1]/30'
+                    } focus:border-[#6B46C1] focus:ring-1 focus:ring-[#6B46C1]/50 focus:outline-none transition-all placeholder:text-gray-400 resize-none`}
+                    placeholder="Describe your current pain points..."
+                  />
+                  {errors.painPoint && (
+                    <p className="mt-1 text-xs text-red-500">{errors.painPoint.message}</p>
+                  )}
+                </div>
+
+                {/* Vision field */}
+                <div>
+                  <label htmlFor="vision" className="block text-sm font-medium mb-1">
+                    Where do you see your business in 2 years?
+                  </label>
+                  <textarea
+                    id="vision"
+                    {...register('vision')}
+                    rows={2}
+                    className={`w-full px-3 py-1.5 bg-black/30 rounded-md border ${
+                      errors.vision ? 'border-red-500' : 'border-[#6B46C1]/30'
+                    } focus:border-[#6B46C1] focus:ring-1 focus:ring-[#6B46C1]/50 focus:outline-none transition-all placeholder:text-gray-400 resize-none`}
+                    placeholder="Share your vision..."
+                  />
+                  {errors.vision && (
+                    <p className="mt-1 text-xs text-red-500">{errors.vision.message}</p>
+                  )}
+                </div>
+
+                {/* Additional Info field */}
+                <div>
+                  <label htmlFor="additionalInfo" className="block text-sm font-medium mb-1">
+                    Anything else we should know?
+                  </label>
+                  <textarea
+                    id="additionalInfo"
+                    {...register('additionalInfo')}
+                    rows={2}
+                    className={`w-full px-3 py-1.5 bg-black/30 rounded-md border ${
+                      errors.additionalInfo ? 'border-red-500' : 'border-[#6B46C1]/30'
+                    } focus:border-[#6B46C1] focus:ring-1 focus:ring-[#6B46C1]/50 focus:outline-none transition-all placeholder:text-gray-400 resize-none`}
+                    placeholder="Share any additional information..."
+                  />
+                  {errors.additionalInfo && (
+                    <p className="mt-1 text-xs text-red-500">{errors.additionalInfo.message}</p>
+                  )}
+                </div>
               </div>
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-2">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  rows={4}
-                  className="w-full px-4 py-2 bg-black/20 rounded-md border border-[#6B46C1]/20 focus:border-[#6B46C1] focus:outline-none transition-colors"
-                  placeholder="Tell us about your needs..."
-                />
-              </div>
+
+              {/* Form-level validation message */}
+              <p className="text-sm text-center">
+                * Name and Email are required. At least one of: Current Challenge, Future Vision, or
+                Additional Information must be filled.
+              </p>
+
+              {/* Submit error */}
+
+              {/* Success message */}
+              {submitSuccess && (
+                <p className="text-sm text-green-500 text-center">
+                  Thank you for your message! We&apos;ll get back to you soon.
+                </p>
+              )}
+
               <Button
+                type="submit"
                 size="lg"
-                className="w-full bg-gradient-to-r from-[#6B46C1] via-[#E94B87] to-[#F9A23F] hover:opacity-90 text-white font-satoshi"
+                disabled={isSubmitting}
+                className="w-full bg-gradient-to-r from-[#6B46C1] via-[#E94B87] to-[#F9A23F] hover:opacity-90 text-white font-satoshi disabled:opacity-50 shadow-lg shadow-[#6B46C1]/20 hover:shadow-xl hover:shadow-[#6B46C1]/30 transition-all duration-300"
               >
-                Send Message
+                {isSubmitting ? 'Sending...' : 'Send Message'}
               </Button>
             </form>
           </div>
