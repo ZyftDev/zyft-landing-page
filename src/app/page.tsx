@@ -1,8 +1,11 @@
 import { FC } from 'react';
 
+import { Spotlight } from '@/components/ui';
+
 const Home: FC = () => {
   return (
     <div className="flex flex-col gap-32 pb-32">
+      <Spotlight />
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center">
         <div className="text-center">

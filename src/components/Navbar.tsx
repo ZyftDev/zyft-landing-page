@@ -1,6 +1,6 @@
 'use client';
 
-import { FC, useEffect, useState } from 'react';
+import { FC } from 'react';
 
 import Image from 'next/image';
 import Link from 'next/link';
@@ -17,39 +17,8 @@ const navItems = [
 ];
 
 export const Navbar: FC = () => {
-  const [visible, setVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
-
-  useEffect(() => {
-    const controlNavbar = () => {
-      if (typeof window !== 'undefined') {
-        const currentScrollY = window.scrollY;
-
-        if (currentScrollY < lastScrollY || currentScrollY < 10) {
-          setVisible(true);
-        } else if (currentScrollY > lastScrollY && currentScrollY > 10) {
-          setVisible(false);
-        }
-
-        setLastScrollY(currentScrollY);
-      }
-    };
-
-    if (typeof window !== 'undefined') {
-      window.addEventListener('scroll', controlNavbar);
-
-      return () => {
-        window.removeEventListener('scroll', controlNavbar);
-      };
-    }
-  }, [lastScrollY]);
-
   return (
-    <nav
-      className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-[1200px] transition-transform duration-300 ${
-        visible ? 'translate-y-0' : '-translate-y-32'
-      }`}
-    >
+    <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-[1200px]">
       <div className="bg-black backdrop-blur-md rounded-lg px-6 h-[60px] flex items-center justify-between border border-gray-800/50">
         <Link href="/" className="flex items-center">
           <Image
