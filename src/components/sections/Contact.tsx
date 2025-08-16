@@ -4,7 +4,7 @@ import { Button } from '@/components/ui';
 
 export const Contact: FC = () => {
   return (
-    <section className="py-32 bg-black/5" id="contact">
+    <section className="py-32" id="contact">
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <div>
@@ -15,7 +15,7 @@ export const Contact: FC = () => {
             </p>
             <div className="space-y-6">
               <div className="flex items-center gap-4">
-                <div className="bg-gradient-to-r from-[#E94B87] to-[#F9A23F] rounded-full p-3">
+                <div className="bg-gradient-to-r from-[#6B46C1] via-[#E94B87] to-[#F9A23F] rounded-full p-3">
                   <svg
                     className="w-6 h-6 text-white"
                     fill="none"
@@ -36,7 +36,7 @@ export const Contact: FC = () => {
                 </div>
               </div>
               <div className="flex items-center gap-4">
-                <div className="bg-gradient-to-r from-[#E94B87] to-[#F9A23F] rounded-full p-3">
+                <div className="bg-gradient-to-r from-[#6B46C1] via-[#E94B87] to-[#F9A23F] rounded-full p-3">
                   <svg
                     className="w-6 h-6 text-white"
                     fill="none"
@@ -58,7 +58,7 @@ export const Contact: FC = () => {
               </div>
             </div>
           </div>
-          <div className="bg-black/10 backdrop-blur-sm rounded-lg p-8 border border-[#E94B87]/10">
+          <div className="bg-black/10 backdrop-blur-sm rounded-lg p-8 border border-[#6B46C1]/10">
             <form className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium mb-2">
@@ -67,7 +67,7 @@ export const Contact: FC = () => {
                 <input
                   type="text"
                   id="name"
-                  className="w-full px-4 py-2 bg-black/20 rounded-md border border-[#E94B87]/20 focus:border-[#E94B87] focus:outline-none transition-colors"
+                  className="w-full px-4 py-2 bg-black/20 rounded-md border border-[#6B46C1]/20 focus:border-[#6B46C1] focus:outline-none transition-colors"
                   placeholder="John Doe"
                 />
               </div>
@@ -78,7 +78,7 @@ export const Contact: FC = () => {
                 <input
                   type="email"
                   id="email"
-                  className="w-full px-4 py-2 bg-black/20 rounded-md border border-[#E94B87]/20 focus:border-[#E94B87] focus:outline-none transition-colors"
+                  className="w-full px-4 py-2 bg-black/20 rounded-md border border-[#6B46C1]/20 focus:border-[#6B46C1] focus:outline-none transition-colors"
                   placeholder="john@company.com"
                 />
               </div>
@@ -89,13 +89,13 @@ export const Contact: FC = () => {
                 <textarea
                   id="message"
                   rows={4}
-                  className="w-full px-4 py-2 bg-black/20 rounded-md border border-[#E94B87]/20 focus:border-[#E94B87] focus:outline-none transition-colors"
+                  className="w-full px-4 py-2 bg-black/20 rounded-md border border-[#6B46C1]/20 focus:border-[#6B46C1] focus:outline-none transition-colors"
                   placeholder="Tell us about your needs..."
                 />
               </div>
               <Button
                 size="lg"
-                className="w-full bg-gradient-to-r from-[#E94B87] to-[#F9A23F] hover:opacity-90 text-white font-satoshi"
+                className="w-full bg-gradient-to-r from-[#6B46C1] via-[#E94B87] to-[#F9A23F] hover:opacity-90 text-white font-satoshi"
               >
                 Send Message
               </Button>

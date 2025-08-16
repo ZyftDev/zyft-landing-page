@@ -54,7 +54,7 @@ export const Services: FC = () => {
           {services.map((service) => (
             <div
               key={service.title}
-              className="bg-black/10 backdrop-blur-sm rounded-lg p-8 border border-[#E94B87]/10 hover:border-[#E94B87]/20 transition-colors group"
+              className="bg-black/10 backdrop-blur-sm rounded-lg p-8 border border-[#6B46C1]/10 hover:border-[#6B46C1]/20 transition-colors group"
             >
               <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">
                 {service.icon}

@@ -29,7 +29,7 @@ const steps = [
 
 export const HowWeWork: FC = () => {
   return (
-    <section className="py-32 bg-black/5" id="how-we-work">
+    <section className="py-32" id="how-we-work">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-5xl font-clash mb-4">How We Work</h2>
@@ -41,9 +41,9 @@ export const HowWeWork: FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
           {steps.map((step) => (
             <div key={step.number} className="relative group">
-              <div className="bg-black/10 backdrop-blur-sm rounded-lg p-8 border border-[#E94B87]/10 hover:border-[#E94B87]/20 transition-colors">
+              <div className="bg-black/10 backdrop-blur-sm rounded-lg p-8 border border-[#6B46C1]/10 hover:border-[#6B46C1]/20 transition-colors">
                 <div className="flex items-start gap-6">
-                  <span className="text-4xl font-clash bg-gradient-to-r from-[#E94B87] to-[#F9A23F] text-transparent bg-clip-text">
+                  <span className="text-4xl font-clash bg-gradient-to-r from-[#6B46C1] via-[#E94B87] to-[#F9A23F] text-transparent bg-clip-text">
                     {step.number}
                   </span>
                   <div>

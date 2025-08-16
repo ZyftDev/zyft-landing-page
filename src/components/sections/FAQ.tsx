@@ -48,7 +48,7 @@ export const FAQ: FC = () => {
           {faqs.map((faq) => (
             <div
               key={faq.question}
-              className="bg-black/10 backdrop-blur-sm rounded-lg p-8 border border-[#E94B87]/10 hover:border-[#E94B87]/20 transition-colors"
+              className="bg-black/10 backdrop-blur-sm rounded-lg p-8 border border-[#6B46C1]/10 hover:border-[#6B46C1]/20 transition-colors"
             >
               <h3 className="text-2xl font-clash mb-3">{faq.question}</h3>
               <p className="text-gray-300 font-satoshi">{faq.answer}</p>

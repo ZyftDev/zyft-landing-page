@@ -16,14 +16,14 @@ export const Hero: FC = () => {
         <div className="flex items-center justify-center gap-4 mt-8">
           <Button
             size="lg"
-            className="bg-gradient-to-r from-[#E94B87] to-[#F9A23F] hover:opacity-90 text-white font-satoshi px-8"
+            className="bg-gradient-to-r from-[#6B46C1] via-[#E94B87] to-[#F9A23F] hover:opacity-90 text-white font-satoshi px-8"
           >
             Get Started Free
           </Button>
           <Button
             size="lg"
             variant="outline"
-            className="border-[#E94B87] text-[#E94B87] hover:bg-[#E94B87]/10 font-satoshi px-8"
+            className="border-[#6B46C1] text-[#6B46C1] hover:bg-[#6B46C1]/10 font-satoshi px-8"
           >
             See How It Works
           </Button>

@@ -19,15 +19,16 @@ const navItems = [
 export const Navbar: FC = () => {
   return (
     <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-[1200px]">
-      <div className="bg-black/30 backdrop-blur-md rounded-lg px-6 h-[60px] flex items-center justify-between border border-[#E94B87]/20">
+      <div className="bg-black/30 backdrop-blur-md rounded-lg px-6 h-[60px] flex items-center justify-between border border-[#6B46C1]/20">
         <Link href="/" className="flex items-center">
           <Image
-            src="/logos/zyft-logo-transparent.png"
+            src="/logos/logo-no-bg.png"
             alt="Zyft Logo"
             width={130}
             height={40}
             className="h-12 w-auto"
-          />
+          />{' '}
+          <h1 className="text-2xl font-clash">Zyft</h1>
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
@@ -45,7 +46,7 @@ export const Navbar: FC = () => {
         <div className="flex items-center gap-4">
           <Button
             variant="default"
-            className="bg-gradient-to-r from-[#E94B87] to-[#F9A23F] text-white hover:opacity-90"
+            className="bg-gradient-to-r from-[#6B46C1] via-[#E94B87] to-[#F9A23F] text-white hover:opacity-90"
             asChild
           >
             <Link href="/download" className="flex items-center gap-2">

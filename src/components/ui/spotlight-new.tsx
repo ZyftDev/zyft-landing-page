@@ -15,15 +15,15 @@ type SpotlightProps = {
 };
 
 export const Spotlight = ({
-  gradientFirst = 'radial-gradient(68.54% 68.72% at 55.02% 31.46%, rgba(233, 75, 135, 0.35) 0%, rgba(249, 162, 63, 0.25) 50%, rgba(249, 162, 63, 0) 80%)',
-  gradientSecond = 'radial-gradient(50% 50% at 50% 50%, rgba(233, 75, 135, 0.30) 0%, rgba(249, 162, 63, 0.20) 80%, transparent 100%)',
-  gradientThird = 'radial-gradient(50% 50% at 50% 50%, rgba(233, 75, 135, 0.25) 0%, rgba(249, 162, 63, 0.15) 80%, transparent 100%)',
+  gradientFirst = 'radial-gradient(68.54% 68.72% at 55.02% 31.46%, rgba(107, 70, 193, 0.08) 0%, rgba(233, 75, 135, 0.06) 50%, rgba(249, 162, 63, 0.04) 80%, rgba(249, 162, 63, 0) 90%)',
+  gradientSecond = 'radial-gradient(50% 50% at 50% 50%, rgba(107, 70, 193, 0.06) 0%, rgba(233, 75, 135, 0.04) 50%, rgba(249, 162, 63, 0.03) 80%, transparent 100%)',
+  gradientThird = 'radial-gradient(50% 50% at 50% 50%, rgba(107, 70, 193, 0.04) 0%, rgba(233, 75, 135, 0.03) 50%, rgba(249, 162, 63, 0.02) 80%, transparent 100%)',
   translateY = -350,
-  width = 560,
+  width = 500,
   height = 1380,
   smallWidth = 240,
   duration = 7,
-  xOffset = 100,
+  xOffset = 50,
 }: SpotlightProps = {}) => {
   return (
     <motion.div

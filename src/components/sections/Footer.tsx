@@ -49,7 +49,7 @@ export const Footer: FC = () => {
   };
 
   return (
-    <footer className="relative bg-gradient-to-t from-gray-950 via-[rgba(126,87,194,0.08)] to-[rgba(255,64,129,0.04)] border-t border-[rgba(126,87,194,0.1)]">
+    <footer className="relative border-t border-[#6B46C1]/20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Brand section */}
@@ -57,29 +57,28 @@ export const Footer: FC = () => {
             <div className="flex items-center mb-4">
               <Image
                 src="/logos/logo-no-bg.png"
-                alt="Cleave Logo"
+                alt="Zyft Logo"
                 width={32}
                 height={32}
                 className="w-12 h-12"
               />
-              <span className="text-2xl font-clash text-white">Cleave</span>
+              <span className="text-2xl font-clash text-white">Zyft</span>
             </div>
             <p className="text-sm sm:text-base text-landing-hero-subheading mb-6 max-w-sm ml-4">
-              Perfect your prompts with agent-driven evaluation. Stop guessing, start optimizing.
+              AI agents that handle your repetitive tasks. You focus on what actually grows your
+              business.
             </p>
           </div>
 
           {/* Waitlist signup */}
-          <div className="bg-gradient-to-br from-[rgba(126,87,194,0.05)] via-[rgba(255,64,129,0.03)] to-[rgba(126,87,194,0.05)] backdrop-blur-xl border border-[rgba(126,87,194,0.1)] rounded-2xl p-6 sm:p-8">
+          <div className="bg-gradient-to-br from-[#6B46C1]/5 via-[#E94B87]/3 to-[#F9A23F]/5 backdrop-blur-xl border border-[#6B46C1]/20 rounded-2xl p-6 sm:p-8">
             <div className="relative">
               <div className="flex flex-col space-y-4">
                 <div>
-                  <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">
-                    Join the Cleave Waitlist
-                  </h3>
+                  <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">Get in Touch</h3>
                   <p className="text-sm sm:text-base text-landing-hero-subheading">
-                    Be the first to know when we launch and get early access to our prompt
-                    engineering tools.
+                    Let us help you automate your business tasks. Drop your email and we&apos;ll
+                    reach out to discuss your needs.
                   </p>
                 </div>
 
@@ -93,7 +92,7 @@ export const Footer: FC = () => {
                         d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                       />
                     </svg>
-                    <span>You&apos;re on the waitlist!</span>
+                    <span>Thanks! We&apos;ll be in touch soon.</span>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
@@ -102,20 +101,20 @@ export const Footer: FC = () => {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="Enter your email"
-                      className="w-full sm:w-64 px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-custom-purple focus:ring-1 focus:ring-custom-purple/50 transition-all duration-300"
+                      className="w-full sm:w-64 px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-[#6B46C1] focus:ring-1 focus:ring-[#6B46C1]/50 transition-all duration-300"
                       disabled={isLoading}
                       required
                     />
                     <button
                       type="submit"
                       disabled={isLoading}
-                      className="w-full sm:w-auto px-6 py-3 bg-gradient-to-r from-custom-purple to-custom-magenta text-white font-medium rounded-lg hover:shadow-lg hover:shadow-custom-magenta/20 transition-all duration-300 whitespace-nowrap flex items-center justify-center"
+                      className="w-full sm:w-auto px-6 py-3 bg-gradient-to-r from-[#6B46C1] via-[#E94B87] to-[#F9A23F] text-white font-medium rounded-lg hover:shadow-lg hover:opacity-90 transition-all duration-300 whitespace-nowrap flex items-center justify-center"
                     >
                       {isLoading ? (
                         <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                       ) : (
                         <span className="flex items-center space-x-2">
-                          <span>Join Waitlist</span>
+                          <span>Contact Us</span>
                           <svg
                             className="w-4 h-4"
                             fill="none"
@@ -141,9 +140,9 @@ export const Footer: FC = () => {
         </div>
 
         {/* Copyright */}
-        <div className="mt-12 pt-8 border-t border-[rgba(126,87,194,0.2)]">
+        <div className="mt-12 pt-8 border-t border-[#6B46C1]/20">
           <p className="text-sm text-landing-hero-subheading text-center">
-            © {new Date().getFullYear()} Cleave. All rights reserved.
+            © {new Date().getFullYear()} Zyft. All rights reserved.
           </p>
         </div>
       </div>
