@@ -49,10 +49,9 @@ export const Footer: FC = () => {
   };
 
   return (
-    <footer className="relative border-t border-[#6B46C1]/20">
+    <footer className="relative border-t border-[#6B46C1]/20 text-[var(--color-text-secondary)]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-          {/* Brand section */}
           <div>
             <div className="flex items-center mb-4">
               <Image
@@ -62,20 +61,30 @@ export const Footer: FC = () => {
                 height={32}
                 className="w-12 h-12"
               />
-              <span className="text-2xl font-clash text-white">Zyft</span>
+              <span className="text-2xl font-clash text-[var(--color-text-primary)]">Zyft</span>
             </div>
-            <p className="text-sm sm:text-base text-landing-hero-subheading mb-6 max-w-sm ml-4">
+            <p className="text-sm sm:text-base text-landing-hero-subheading mb-4 max-w-sm ml-4">
               AI agents that handle your repetitive tasks. You focus on what actually grows your
               business.
             </p>
+            <div className="flex items-center space-x-2 text-sm sm:text-base text-landing-hero-subheading ml-4">
+              <span>If you have any questions, reach out to us at </span>
+              <a
+                href="mailto:info@zyft.ca"
+                className="bg-gradient-to-r from-[#E94B87] to-[#F9A23F] inline-block text-transparent bg-clip-text hover:opacity-80 transition-opacity duration-300"
+              >
+                info@zyft.ca
+              </a>
+            </div>
           </div>
 
-          {/* Waitlist signup */}
           <div className="bg-gradient-to-br from-[#6B46C1]/5 via-[#E94B87]/3 to-[#F9A23F]/5 backdrop-blur-xl border border-[#6B46C1]/20 rounded-2xl p-6 sm:p-8">
             <div className="relative">
               <div className="flex flex-col space-y-4">
                 <div>
-                  <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">Get in Touch</h3>
+                  <h3 className="text-lg sm:text-xl font-semibold text-[var(--color-text-primary)] mb-2">
+                    Get in Touch
+                  </h3>
                   <p className="text-sm sm:text-base text-landing-hero-subheading">
                     Let us help you automate your business tasks. Drop your email and we&apos;ll
                     reach out to discuss your needs.
@@ -139,7 +148,6 @@ export const Footer: FC = () => {
           </div>
         </div>
 
-        {/* Copyright */}
         <div className="mt-12 pt-8 border-t border-[#6B46C1]/20">
           <p className="text-sm text-landing-hero-subheading text-center">
             © {new Date().getFullYear()} Zyft. All rights reserved.
