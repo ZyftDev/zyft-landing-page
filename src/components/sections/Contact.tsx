@@ -8,6 +8,10 @@ import { useForm } from 'react-hook-form';
 import { Button } from '@/components/ui';
 import { ContactFormData, contactFormSchema } from '@/lib/contact-form';
 
+type ExtendedContactFormData = ContactFormData & {
+  form?: { message: string };
+};
+
 export const Contact: FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
@@ -17,30 +21,35 @@ export const Contact: FC = () => {
     handleSubmit,
     formState: { errors },
     reset,
-  } = useForm<ContactFormData>({
+  } = useForm<ExtendedContactFormData>({
     resolver: zodResolver(contactFormSchema),
+    mode: 'onChange',
   });
 
   const onSubmit = async (data: ContactFormData) => {
-    console.log('📝 Form Submission Data:', {
-      name: data.name,
-      email: data.email,
-      company: data.company,
-      role: data.role,
-      hasPainPoint: !!data.painPoint,
-      painPoint: data.painPoint,
-      hasVision: !!data.vision,
-      vision: data.vision,
-      hasAdditionalInfo: !!data.additionalInfo,
-      additionalInfo: data.additionalInfo,
-    });
+    try {
+      setIsSubmitting(true);
 
-    setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
 
-    setSubmitSuccess(true);
-    reset();
-    setIsSubmitting(false);
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+
+      setSubmitSuccess(true);
+      reset();
+    } catch (error) {
+      console.error('Failed to send message:', error);
+      alert('Failed to send message. Please try again later.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
   return (
     <section className="py-32 text-[var(--color-text-secondary)]" id="contact">
@@ -104,7 +113,7 @@ export const Contact: FC = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium mb-1">
-                    Name *
+                    Name
                   </label>
                   <input
                     type="text"
@@ -112,18 +121,21 @@ export const Contact: FC = () => {
                     {...register('name')}
                     className={`w-full px-3 py-1.5 bg-black/30 rounded-md border ${
                       errors.name ? 'border-red-500' : 'border-[#6B46C1]/30'
-                    } focus:border-[#6B46C1] focus:ring-1 focus:ring-[#6B46C1]/50 focus:outline-none transition-all placeholder:text-gray-400`}
+                    } focus:border-[#6B46C1] focus:ring-1 focus:ring-[#6B46C1]/50 focus:outline-none transition-all placeholder:text-gray-400 peer`}
+                    {...(errors.name ? { 'aria-invalid': 'true' } : {})}
+                    aria-describedby="name-error name-requirements"
                     placeholder="John Doe"
                   />
                   {errors.name && (
-                    <p className="mt-1 text-xs text-red-500">{errors.name.message}</p>
+                    <p id="name-error" className="mt-1 text-xs text-red-500">
+                      {errors.name.message}
+                    </p>
                   )}
                 </div>
 
-                {/* Email field */}
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium mb-1">
-                    Email *
+                    Email
                   </label>
                   <input
                     type="email"
@@ -131,15 +143,18 @@ export const Contact: FC = () => {
                     {...register('email')}
                     className={`w-full px-3 py-1.5 bg-black/30 rounded-md border ${
                       errors.email ? 'border-red-500' : 'border-[#6B46C1]/30'
-                    } focus:border-[#6B46C1] focus:ring-1 focus:ring-[#6B46C1]/50 focus:outline-none transition-all placeholder:text-gray-400`}
+                    } focus:border-[#6B46C1] focus:ring-1 focus:ring-[#6B46C1]/50 focus:outline-none transition-all placeholder:text-gray-400 peer`}
+                    {...(errors.email ? { 'aria-invalid': 'true' } : {})}
+                    aria-describedby="email-error email-requirements"
                     placeholder="john@company.com"
                   />
                   {errors.email && (
-                    <p className="mt-1 text-xs text-red-500">{errors.email.message}</p>
+                    <p id="email-error" className="mt-1 text-xs text-red-500">
+                      {errors.email.message}
+                    </p>
                   )}
                 </div>
 
-                {/* Company field */}
                 <div>
                   <label htmlFor="company" className="block text-sm font-medium mb-1">
                     Company
@@ -158,7 +173,6 @@ export const Contact: FC = () => {
                   )}
                 </div>
 
-                {/* Role field */}
                 <div>
                   <label htmlFor="role" className="block text-sm font-medium mb-1">
                     Role
@@ -178,9 +192,7 @@ export const Contact: FC = () => {
                 </div>
               </div>
 
-              {/* Detailed Info - Single Column */}
               <div className="space-y-4">
-                {/* Pain Point field */}
                 <div>
                   <label htmlFor="painPoint" className="block text-sm font-medium mb-1">
                     What&apos;s your biggest challenge right now?
@@ -199,7 +211,6 @@ export const Contact: FC = () => {
                   )}
                 </div>
 
-                {/* Vision field */}
                 <div>
                   <label htmlFor="vision" className="block text-sm font-medium mb-1">
                     Where do you see your business in 2 years?
@@ -218,7 +229,6 @@ export const Contact: FC = () => {
                   )}
                 </div>
 
-                {/* Additional Info field */}
                 <div>
                   <label htmlFor="additionalInfo" className="block text-sm font-medium mb-1">
                     Anything else we should know?
@@ -238,20 +248,13 @@ export const Contact: FC = () => {
                 </div>
               </div>
 
-              {/* Form-level validation message */}
-              <p className="text-sm text-center">
-                * Name and Email are required. At least one of: Current Challenge, Future Vision, or
-                Additional Information must be filled.
-              </p>
-
-              {/* Submit error */}
-
-              {/* Success message */}
-              {submitSuccess && (
-                <p className="text-sm text-green-500 text-center">
-                  Thank you for your message! We&apos;ll get back to you soon.
-                </p>
-              )}
+              <div className="space-y-2">
+                {submitSuccess && (
+                  <p className="text-sm text-green-500 text-center" role="status">
+                    Thank you for your message! We&apos;ll get back to you soon.
+                  </p>
+                )}
+              </div>
 
               <Button
                 type="submit"
