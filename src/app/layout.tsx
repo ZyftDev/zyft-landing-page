@@ -5,8 +5,9 @@ import { Footer, Navbar } from '@/components/sections';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Zyft',
-  description: 'Zyft',
+  title: 'Zyft | Let AI Agents Handle The Work You Hate',
+  description:
+    'Stop doing work a robot could handle. Our AI agents crush the repetitive stuff so you can focus on building something that matters.',
 };
 
 export default function RootLayout({
@@ -16,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-black text-white bg-gradient-to-t from-gray-950 via-[#6B46C1]/10 to-[#F9A23F]/5 min-h-screen bg-fixed">
+      <body className="bg-black bg-gradient-to-t from-gray-950 via-[#6B46C1]/10 to-[#F9A23F]/5 min-h-screen bg-fixed overflow-x-hidden">
         <Navbar />
         {children}
         <Footer />

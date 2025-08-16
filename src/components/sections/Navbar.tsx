@@ -39,7 +39,7 @@ export const Navbar: FC = () => {
             height={40}
             className="h-12 w-auto"
           />{' '}
-          <h1 className="text-2xl font-clash">Zyft</h1>
+          <h1 className="text-2xl font-clash text-[var(--color-text-primary)]">Zyft</h1>
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
@@ -58,7 +58,7 @@ export const Navbar: FC = () => {
         <div className="flex items-center gap-4">
           <Button
             variant="default"
-            className="hidden md:flex bg-gradient-to-r from-[var(--color-gradient-start)] via-[var(--color-gradient-middle)] to-[var(--color-gradient-end)] text-white hover:opacity-90"
+            className="bg-gradient-to-r from-[var(--color-gradient-start)] via-[var(--color-gradient-middle)] to-[var(--color-gradient-end)] text-white font-satoshi rounded-sm btn-primary-glow"
             asChild
           >
             <Link
