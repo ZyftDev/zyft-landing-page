@@ -10,8 +10,8 @@ const Home: FC = () => {
       <Hero />
       <Services />
       <HowWeWork />
-      <FAQ />
       <Contact />
+      <FAQ />
     </div>
   );
 };

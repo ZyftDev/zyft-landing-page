@@ -44,7 +44,9 @@ export const Services: FC = () => {
     <section className="py-32" id="services">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-clash mb-4">Our Services</h2>
+          <h2 className="text-5xl font-clash mb-4 text-[var(--color-text-primary)]">
+            Our Services
+          </h2>
           <p className="text-xl text-gray-300 font-satoshi max-w-2xl mx-auto">
             Powerful AI agents that transform how you work, giving you back precious time to focus
             on what matters most.
