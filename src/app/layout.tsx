@@ -1,3 +1,5 @@
+import { Analytics } from '@vercel/analytics/next';
+
 import type { Metadata } from 'next';
 
 import { Footer, Navbar } from '@/components/sections';
@@ -21,6 +23,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
