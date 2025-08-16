@@ -62,6 +62,14 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   /* ===== Custom Colors ===== */
+  --color-gradient-start: #6b46c1;
+  --color-gradient-middle: #e94b87;
+  --color-gradient-end: #f9a23f;
+  --color-nav-bg: rgb(0 0 0 / 0.3);
+  --color-nav-border: rgb(107 70 193 / 0.2);
+  --color-nav-text: rgb(209 213 219);
+  --color-nav-text-hover: #f9a23f;
+  --color-nav-mobile-bg: rgb(0 0 0 / 0.95);
 }
 
 :root {
@@ -134,6 +142,10 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px; /* This accounts for the fixed navbar */
+  }
   * {
     @apply border-border outline-ring/50;
   }
