@@ -29,7 +29,7 @@ export const Navbar: FC = () => {
   };
 
   return (
-    <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-[1200px]">
+    <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-[1400px]">
       <div className="bg-[var(--color-nav-bg)] backdrop-blur-md rounded-lg px-6 h-[60px] flex items-center justify-between border border-[var(--color-nav-border)]">
         <Link href="/" className="flex items-center">
           <Image
@@ -58,7 +58,7 @@ export const Navbar: FC = () => {
         <div className="flex items-center gap-4">
           <Button
             variant="default"
-            className="bg-gradient-to-r from-[var(--color-gradient-start)] via-[var(--color-gradient-middle)] to-[var(--color-gradient-end)] text-white font-satoshi rounded-sm btn-primary-glow"
+            className="hidden md:flex bg-gradient-to-r from-[var(--color-gradient-start)] via-[var(--color-gradient-middle)] to-[var(--color-gradient-end)] text-white font-satoshi rounded-sm btn-primary-glow"
             asChild
           >
             <Link

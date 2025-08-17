@@ -50,7 +50,7 @@ export const Footer: FC = () => {
 
   return (
     <footer className="relative border-t border-[#6B46C1]/20 text-[var(--color-text-secondary)]">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="w-[95%] max-w-[1400px] mx-auto py-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           <div>
             <div className="flex items-center mb-4">

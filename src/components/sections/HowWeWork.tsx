@@ -30,9 +30,11 @@ const steps = [
 export const HowWeWork: FC = () => {
   return (
     <section className="py-32" id="how-we-work">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="w-[95%] max-w-[1400px] mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-clash mb-4">How We Work</h2>
+          <h2 className="text-6xl font-clash mb-6 bg-gradient-to-r from-[#6B46C1] via-[#E94B87] to-[#F9A23F] inline-block text-transparent bg-clip-text">
+            How We Work
+          </h2>
           <p className="text-xl text-gray-300 font-satoshi max-w-2xl mx-auto">
             Getting started with Zyft is simple. Our intelligent agents integrate seamlessly into
             your workflow in four easy steps.

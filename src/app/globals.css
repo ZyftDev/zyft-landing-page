@@ -70,8 +70,8 @@
   --color-nav-text: rgb(209 213 219);
   --color-nav-text-hover: #f9a23f;
   --color-nav-mobile-bg: rgb(0 0 0 / 0.95);
-  --color-text-primary: rgb(244 244 245);
-  --color-text-secondary: rgb(161 161 170);
+  --color-text-primary: oklch(96.7% 0.001 286.375);
+  --color-text-secondary: oklch(70.5% 0.015 286.067);
   --animate-aurora: aurora 8s ease-in-out infinite alternate;
   @keyframes aurora {
     0% {

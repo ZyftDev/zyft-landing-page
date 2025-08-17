@@ -29,9 +29,9 @@ export const FAQ: FC = () => {
 
   return (
     <div className="relative w-full">
-      <div className="max-w-7xl mx-auto py-16 px-4 md:px-8">
+      <div className="w-[95%] max-w-[1400px] mx-auto py-16">
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-clash mb-4 text-[var(--color-text-primary)]">
+          <h2 className="text-6xl font-clash mb-6 bg-gradient-to-r from-[#6B46C1] via-[#E94B87] to-[#F9A23F] inline-block text-transparent bg-clip-text">
             Frequently Asked Questions
           </h2>
           <p className="text-xl text-[var(--color-text-secondary)] font-satoshi max-w-2xl mx-auto">
