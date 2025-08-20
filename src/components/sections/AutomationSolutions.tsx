@@ -6,7 +6,6 @@ import {
   Brain,
   Briefcase,
   Building,
-  Building2,
   Calendar,
   CalendarClock,
   CheckCircle2,
@@ -21,6 +20,7 @@ import {
   MessageSquare,
   PenTool,
   Rocket,
+  Settings,
   Share2,
   ShoppingCart,
   Sparkles,
@@ -66,14 +66,210 @@ interface IndustryExample {
 
 const categories: AutomationCategory[] = [
   {
-    icon: <Building2 className="w-6 h-6" />,
-    title: 'For Small Businesses',
-    description: 'Powerful automations that streamline your business operations',
+    icon: <Brain className="w-6 h-6" />,
+    title: 'AI Agent Services',
+    description:
+      'Transform your business operations with custom AI agents that go beyond simple automation',
     subcategories: [
       {
+        icon: <MessageSquare className="w-5 h-5" />,
+        title: 'Customer Experience Agents',
+        description:
+          'Autonomous agents that understand customer intent and emotion to resolve issues proactively',
+        examples: [
+          {
+            icon: <MessageSquare className="w-5 h-5" />,
+            title: '🤖 Autonomous Support Agents',
+            description: 'Context-aware support that independently resolves complex issues',
+            metrics: {
+              value: 'Understand context, emotion, and connect with multiple systems',
+            },
+          },
+          {
+            icon: <TrendingUp className="w-5 h-5" />,
+            title: '📈 Proactive Customer Success',
+            description: 'Monitor and predict customer needs before issues arise',
+            metrics: {
+              value: 'Personalized solutions through behavior pattern analysis',
+            },
+          },
+          {
+            icon: <Brain className="w-5 h-5" />,
+            title: '🔄 Dynamic Problem-Solving',
+            description: 'Create custom resolution paths that learn from each interaction',
+            metrics: {
+              value: 'Continuous learning and adaptation from interactions',
+            },
+          },
+        ],
+      },
+      {
+        icon: <LineChart className="w-5 h-5" />,
+        title: 'Sales Intelligence Agents',
+        description: 'Agentic AI that optimizes sales results through real-time market analysis',
+        examples: [
+          {
+            icon: <Users className="w-5 h-5" />,
+            title: '🎯 Lead Qualification Agents',
+            description: 'Intelligent conversation-based lead qualification',
+            metrics: {
+              value: 'Uncover real needs and buying intent through conversations',
+            },
+          },
+          {
+            icon: <BarChart className="w-5 h-5" />,
+            title: '📊 Strategic Account Planning',
+            description: 'Data-driven engagement strategy optimization',
+            metrics: {
+              value: 'Continuous analysis of account data and market conditions',
+            },
+          },
+          {
+            icon: <Share2 className="w-5 h-5" />,
+            title: '🔄 Deal Orchestration',
+            description: 'Autonomous sales process coordination',
+            metrics: {
+              value: 'Adaptive strategies based on prospect behavior',
+            },
+          },
+        ],
+      },
+      {
+        icon: <DollarSign className="w-5 h-5" />,
+        title: 'Financial Decision Agents',
+        description: 'AI agents that assess, predict, and take autonomous financial actions',
+        examples: [
+          {
+            icon: <TrendingUp className="w-5 h-5" />,
+            title: '💰 Intelligent Cash Flow',
+            description: 'Predictive cash flow management and optimization',
+            metrics: {
+              value: 'Autonomous financial strategy adjustments',
+            },
+          },
+          {
+            icon: <LineChart className="w-5 h-5" />,
+            title: '⚠️ Risk Assessment',
+            description: 'Proactive risk identification and mitigation',
+            metrics: {
+              value: 'Continuous monitoring of financial patterns',
+            },
+          },
+          {
+            icon: <DollarSign className="w-5 h-5" />,
+            title: '📈 Investment Decisions',
+            description: 'Data-driven investment recommendations',
+            metrics: {
+              value: 'Autonomous portfolio adjustments based on goals',
+            },
+          },
+        ],
+      },
+      {
+        icon: <Settings className="w-5 h-5" />,
+        title: 'Operations Intelligence',
+        description: 'AI agents that autonomously plan, execute, and adapt workflows',
+        examples: [
+          {
+            icon: <TrendingUp className="w-5 h-5" />,
+            title: '🏭 Supply Chain Optimization',
+            description: 'Demand-driven supply chain management',
+            metrics: {
+              value: 'Autonomous inventory and logistics adjustments',
+            },
+          },
+          {
+            icon: <Users className="w-5 h-5" />,
+            title: '👥 Workforce Planning',
+            description: 'Data-driven team optimization',
+            metrics: {
+              value: 'Autonomous resource allocation and skill gap analysis',
+            },
+          },
+          {
+            icon: <Settings className="w-5 h-5" />,
+            title: '⚡ Process Improvement',
+            description: 'Continuous operational optimization',
+            metrics: {
+              value: 'Independent implementation of improvements',
+            },
+          },
+        ],
+      },
+      {
+        icon: <UserCog className="w-5 h-5" />,
+        title: 'Autonomous Hiring',
+        description: 'AI agents that revolutionize the entire recruitment process',
+        examples: [
+          {
+            icon: <Users className="w-5 h-5" />,
+            title: '🎯 End-to-End Recruitment',
+            description: 'Complete hiring process automation',
+            metrics: {
+              value: 'From job posting to final candidate selection',
+            },
+          },
+          {
+            icon: <MessageSquare className="w-5 h-5" />,
+            title: '🤝 Intelligent Assessment',
+            description: 'Dynamic interview and evaluation system',
+            metrics: {
+              value: 'Real-time response analysis and adaptation',
+            },
+          },
+          {
+            icon: <Brain className="w-5 h-5" />,
+            title: '🎯 Predictive Hiring',
+            description: 'Data-driven candidate success prediction',
+            metrics: {
+              value: 'Cultural fit and retention likelihood analysis',
+            },
+          },
+          {
+            icon: <CheckCircle2 className="w-5 h-5" />,
+            title: '⚖️ Bias-Free Selection',
+            description: 'Objective skill-based hiring decisions',
+            metrics: {
+              value: 'Continuous learning to eliminate bias',
+            },
+          },
+        ],
+      },
+      {
+        icon: <LineChart className="w-5 h-5" />,
+        title: 'Strategic Planning',
+        description: 'AI agents that excel at autonomous business process management',
+        examples: [
+          {
+            icon: <TrendingUp className="w-5 h-5" />,
+            title: '📊 Market Intelligence',
+            description: 'Real-time market analysis and recommendations',
+            metrics: {
+              value: 'Autonomous strategic updates based on trends',
+            },
+          },
+          {
+            icon: <BarChart className="w-5 h-5" />,
+            title: '📈 Resource Allocation',
+            description: 'Optimal resource distribution',
+            metrics: {
+              value: 'ROI-driven autonomous reallocation',
+            },
+          },
+          {
+            icon: <Rocket className="w-5 h-5" />,
+            title: '🚀 Growth Strategy',
+            description: 'Data-driven expansion planning',
+            metrics: {
+              value: 'Independent opportunity identification',
+            },
+          },
+        ],
+      },
+      {
         icon: <Users className="w-5 h-5" />,
-        title: 'Customer Management & Sales',
-        description: 'Streamline your entire customer journey',
+        title: 'Customer Journey Automation',
+        description: 'Automate your entire customer relationship lifecycle',
         examples: [
           {
             icon: <MessageSquare className="w-5 h-5" />,
@@ -197,8 +393,8 @@ const categories: AutomationCategory[] = [
   },
   {
     icon: <Home className="w-6 h-6" />,
-    title: 'For Individuals & Personal Use',
-    description: 'Make your personal life easier with smart automation',
+    title: 'Personal Task Automation',
+    description: 'Smart solutions to streamline your daily life and routines',
     subcategories: [
       {
         icon: <Home className="w-5 h-5" />,
@@ -271,8 +467,8 @@ const categories: AutomationCategory[] = [
   },
   {
     icon: <Rocket className="w-6 h-6" />,
-    title: 'Advanced Business Automations',
-    description: 'Enterprise-grade solutions for complex operations',
+    title: 'Enterprise Workflow Automation',
+    description: 'Advanced solutions for complex business processes and operations',
     subcategories: [
       {
         icon: <ShoppingCart className="w-5 h-5" />,
@@ -432,29 +628,29 @@ const industryExamples: IndustryExample[] = [
 ];
 
 const benefits = [
-  'Repetitive - Tasks done daily/weekly',
-  'Rule-based - Clear if/then logic',
-  'Time-consuming - Currently taking 2+ hours/week',
-  'Error-prone - Manual mistakes are costly',
-  'Scalable - Grows with your business',
+  'Autonomous Decision-Making - Analyze situations and take action independently',
+  'Continuous Learning - Every interaction makes agents smarter and more effective',
+  'Contextual Understanding - Know not just what to do, but why and when',
+  'Proactive Problem-Solving - Identify and address issues before they become problems',
+  'Goal-Oriented - Focus on achieving business objectives, not just following rules',
 ];
 
 const investmentRanges = [
   {
-    title: 'Small Business Automations',
-    range: '$500-$5,000 setup',
-    period: '2-4 months payback',
+    title: 'Enterprise AI Agents',
+    range: 'Custom Solution Pricing',
+    period: 'Transformative ROI within 3-6 months',
   },
   {
-    title: 'Personal Automations',
-    range: '$200-$1,500 setup',
-    period: '2-6 months payback',
+    title: 'Department-Specific Agents',
+    range: 'Flexible Implementation',
+    period: 'Measurable impact in 1-3 months',
   },
 ];
 
-export const Services: FC = () => {
+export const AutomationSolutions: FC = () => {
   return (
-    <section className="py-32 relative overflow-hidden" id="services">
+    <section className="py-32 relative overflow-hidden" id="automation-solutions">
       {/* Background decoration */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#6B46C1]/5 to-transparent" />
 
@@ -464,16 +660,16 @@ export const Services: FC = () => {
           <div className="inline-flex items-center gap-2 text-[#E94B87] mb-4">
             <Sparkles className="h-5 w-5" />
             <span className="uppercase tracking-wider text-sm font-semibold">
-              Automation Examples
+              AI Agent Services
             </span>
           </div>
           <h2 className="text-7xl font-clash mb-8 bg-gradient-to-r from-[#6B46C1] via-[#E94B87] to-[#F9A23F] inline-block text-transparent bg-clip-text leading-tight">
-            What Can We Automate?
+            Beyond Basic Automation
           </h2>
           <p className="text-xl text-gray-300 font-satoshi max-w-3xl mx-auto leading-relaxed">
-            Every day, business owners spend countless hours on repetitive tasks that could be
-            running automatically. Here are proven automation examples that our clients love – and
-            that typically pay for themselves within 2-3 months.
+            Transform your business operations with custom AI agents that go beyond simple
+            automation. Unlike traditional RPA or basic chatbots, our AI agents can think, adapt,
+            and make autonomous decisions to achieve your business goals.
           </p>
         </div>
 
@@ -668,15 +864,15 @@ export const Services: FC = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-[#6B46C1]/10 via-[#E94B87]/10 to-[#F9A23F]/10 blur-3xl -z-10" />
           <div className="bg-black/20 backdrop-blur-xl rounded-2xl p-12 border border-white/5">
             <h4 className="text-3xl font-clash text-white mb-6">
-              Ready to Automate Your Business?
+              Ready to Move Beyond Basic Automation?
             </h4>
             <p className="text-xl text-gray-300 font-satoshi mb-8 max-w-3xl mx-auto leading-relaxed">
-              The best automation opportunities are often the tasks you do so frequently, you
-              don&apos;t even think about them anymore. Let&apos;s discover how we can help you save
-              time and grow your business.
+              Stop settling for rigid rule-based systems. Get AI agents that think, adapt, and
+              deliver results autonomously. Schedule a free strategy session to discover how AI
+              agents can transform your specific business challenges into competitive advantages.
             </p>
             <button className="bg-gradient-to-r from-[#6B46C1] to-[#E94B87] text-white font-satoshi px-8 py-4 rounded-xl text-lg font-medium hover:opacity-90 transition-opacity">
-              Get Started Now
+              Schedule Free Strategy Session
             </button>
           </div>
         </div>

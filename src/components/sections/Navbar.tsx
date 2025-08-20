@@ -10,7 +10,7 @@ import { Button } from '@/components/ui';
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 
 const navItems = [
-  { label: 'Services', href: '#services' },
+  { label: 'Solutions', href: '#automation-solutions' },
   { label: 'How We Work', href: '#how-we-work' },
   { label: 'Contact', href: '#contact' },
   { label: 'FAQ', href: '#faq' },
