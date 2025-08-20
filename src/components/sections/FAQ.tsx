@@ -28,7 +28,7 @@ export const FAQ: FC = () => {
   const [open, setOpen] = React.useState<string | null>(null);
 
   return (
-    <div className="relative w-full">
+    <div className="relative w-full" id="faq">
       <div className="w-[95%] max-w-[1400px] mx-auto py-16">
         <div className="text-center mb-16">
           <h2 className="text-6xl font-clash mb-6 bg-gradient-to-r from-[#6B46C1] via-[#E94B87] to-[#F9A23F] inline-block text-transparent bg-clip-text">

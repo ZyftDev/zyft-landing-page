@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { Contact, FAQ, Hero, HowWeWork, Services } from '@/components/sections';
+import { AutomationSolutions, Contact, FAQ, Hero, HowWeWork } from '@/components/sections';
 import { Spotlight } from '@/components/ui';
 
 const Home: FC = () => {
@@ -8,7 +8,7 @@ const Home: FC = () => {
     <div className="flex flex-col">
       <Spotlight />
       <Hero />
-      <Services />
+      <AutomationSolutions />
       <HowWeWork />
       <Contact />
       <FAQ />

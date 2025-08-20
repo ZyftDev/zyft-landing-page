@@ -116,11 +116,20 @@ export const Hero: FC = () => {
               className="w-full sm:w-auto"
             >
               <Button
+                asChild
                 size="lg"
                 variant="outline"
                 className="w-full sm:w-auto font-satoshi px-8 py-6 text-lg rounded-lg border-1 bg-[#7c3aed]/20 border-[#c4b5fd] text-white hover:bg-[#7c3aed]/40 hover:border-[#a78bfa] hover:text-white btn-primary-glow"
               >
-                Show Me Examples
+                <Link
+                  href="#solutions"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.querySelector('#solutions')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                >
+                  Show Me Examples
+                </Link>
               </Button>
             </motion.div>
           </motion.div>
